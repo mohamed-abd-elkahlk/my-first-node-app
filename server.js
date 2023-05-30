@@ -12,6 +12,7 @@ const categoryRoute = require("./routes/categoriesRoutes");
 const glopalError = require("./Middleware/errorMiddleware");
 
 const subCategoryRoute = require("./routes/subCategoreyRoutes");
+const brandRoute = require("./routes/BrandRoutes");
 // database connect
 dbConnection();
 // express app
@@ -31,6 +32,7 @@ app.get("/", (req, res) => {
 // Mount Routes
 app.use("/api/v1/categories", categoryRoute);
 app.use("/api/v1/subcategories", subCategoryRoute);
+app.use("/api/v1/brand", brandRoute);
 app.all("*", (req, res, next) => {
   // const err = new Error(`can't find this route ${req.originalUrl}`);
   // next(err.message);
